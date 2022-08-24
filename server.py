@@ -32,9 +32,6 @@ async def handle_connection(reader, writer):
         if not data:
             break
         # Process
-        if data == b"close":
-            break
-        #data = data.upper()
         result = str(process(data))
         if result == '\n':
             data = "The request was completed successfully".encode()
