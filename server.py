@@ -55,8 +55,8 @@ async def main(host, port):
     async with server:
         await server.serve_forever()
 
-HOST = "192.168.88.19"  # Symbolic name meaning all available interfaces
-PORT = 5432  # Arbitrary non-privileged port
+HOST = "192.168.88.254"  # Symbolic name meaning all available interfaces
+PORT = 31416  # Arbitrary non-privileged port
 
 if __name__ == "__main__":
     asyncio.run(main(HOST, PORT))
