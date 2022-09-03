@@ -1,8 +1,8 @@
 import socket
 
 
-HOST = "192.168.88.19"  # The remote host
-PORT = 5432  # The same port as used by the server
+HOST = "188.191.162.78"  # The remote host
+PORT = 31416  # The same port as used by the server
 IS_RECONNECT_ENABLED = False
 
 
