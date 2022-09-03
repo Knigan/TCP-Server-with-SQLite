@@ -4,7 +4,7 @@ from sqlite3 import Error
         
 def process(data):
     try:
-        database = sqlite3.connect('Users.db')
+        database = sqlite3.connect('users.db')
         cursor = database.cursor()
         cursor.execute(data.decode())
         database.commit()
