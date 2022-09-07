@@ -9,14 +9,14 @@ def process(data):
         cursor.execute(data.decode())
         database.commit()
         rows = cursor.fetchall()
-        result = '\n'
+        result = ""
         for row in rows:
             result = result + str(row) + '\n'
         database.close()
         return result
         
     except Error:
-        return "There was the error: " + str(Error)
+        return str(Error)
     
 async def handle_connection(reader, writer):
     addr = writer.get_extra_info("peername")
@@ -33,7 +33,7 @@ async def handle_connection(reader, writer):
             break
         # Process
         result = str(process(data))
-        if result == '\n':
+        if result == '':
             data = "The request was completed successfully".encode()
         else:
             data = result.encode()
@@ -47,6 +47,7 @@ async def handle_connection(reader, writer):
             break
     writer.close()
     print("Disconnected by", addr)
+    print('\n')
 
 
 async def main(host, port):
