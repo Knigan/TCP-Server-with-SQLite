@@ -11,7 +11,7 @@ def process(data):
         rows = cursor.fetchall()
         result = ""
         for row in rows:
-            result = result + str(row) + '\n'
+            result = result + str(row) + "[?~?]"
         database.close()
         return result
         
@@ -33,7 +33,7 @@ async def handle_connection(reader, writer):
             break
         # Process
         result = str(process(data))
-        if result == '':
+        if result == "":
             data = "The request was completed successfully".encode()
         else:
             data = result.encode()
